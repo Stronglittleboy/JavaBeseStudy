@@ -4,8 +4,9 @@ package com.hlw.java_base.designpattern.singleton;
  * 饿汉模式
  */
 public class EHan {
+    /*静态new独享*/
     private static EHan instance = new EHan();
-
+    /*私有构造参数*/
     private EHan() {
     }
     public static EHan getInstance(){

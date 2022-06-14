@@ -15,7 +15,7 @@ import java.io.File;
 public class MoveFile {
     private final static  String filePath = "G:\\迅雷下载";
     public static void main(String[] args) {
-        File file = new File("G:\\迅雷下载");
+        File file = new File(filePath);
         moveFile(file);
     }
 

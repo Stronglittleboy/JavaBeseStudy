@@ -10,7 +10,9 @@ public class DoubleCheck {
     public static DoubleCheck getInstance(){
         if (null == instance) {
             synchronized (DoubleCheck.class){
-                instance=new DoubleCheck();
+                if (null == instance){
+                    instance=new DoubleCheck();
+                }
             }
         }
         return instance;

@@ -1,21 +1,15 @@
 package com.hlw.java_base.designpattern.singleton;
 
-import sun.nio.ch.ThreadPool;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-
-public class Lanhan {
-    private static Lanhan instance;
+public class Lanhan3 {
+    private static Lanhan3 instance;
     /*私有构造函数*/
-    private Lanhan() {
+    private Lanhan3() {
     }
-    /*返回实例*/
-    public static Lanhan getInstance(){
+    /*返回实例 添加同步关键词*/
+    public static Lanhan3 getInstance(){
         /*判断实例是否为null*/
         if (null == instance) {
-            instance = new Lanhan();
+            instance = new Lanhan3();
         }
         return instance;
     }
@@ -23,7 +17,7 @@ public class Lanhan {
     public static void main(String[] args) {
         for (int i = 0; i < 50000; i++) {
             Runnable runnable = ()->{
-                System.out.println(Lanhan.getInstance());
+                System.out.println(Lanhan3.getInstance());
                 try {
                     Thread.sleep(200);
                 } catch (InterruptedException e) {
